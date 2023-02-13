@@ -1,0 +1,13 @@
+Flask
+flask_restful
+flask-security-too
+Flask-SQLAlchemy
+email_validator
+bcrypt
+jinja2
+flask_cors
+flask_caching
+celery[redis]
+datetime
+weasyprint
+werkzeug
