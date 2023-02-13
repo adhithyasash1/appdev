@@ -5,12 +5,12 @@
 npm install
 ```
 
-### install Chartjs
+### Install Chartjs
 ```
 npm install chart.js
 ```
 
-### install Vue-Router@4
+### Install Vue-Router@4
 ```
 npm install vue-router@4
 ```
