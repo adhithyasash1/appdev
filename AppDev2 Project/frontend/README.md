@@ -5,6 +5,16 @@
 npm install
 ```
 
+### install Chartjs
+```
+npm install chart.js
+```
+
+### install Vue-Router@4
+```
+npm install vue-router@4
+```
+
 ### Compiles and hot-reloads for local development
 ```
 npm run serve
