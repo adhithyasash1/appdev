@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Report</title>
+    <style>
+        body {
+            border: 2px solid saddlebrown;
+            border-radius: 15px;
+        }
+        .main {
+            font-family: monospace;
+            font-size: 14px;
+            margin-left: 40px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 5px;
+        }
+        th {
+            text-align: left;
+        }
+        .heading-completed {
+            font-size: 16px;
+            font-weight: bold;
+            color: green;
+            border-style: solid;
+            border-radius: 25px;
+            width: 500px;
+            background-color: #d9ffd1;
+        }
+        .heading-due {
+            font-size: 16px;
+            font-weight: bold;
+            color: #b30000;
+            border-style: solid;
+            border-radius: 25px;
+            width: 500px;
+            background-color: #ffe3e3;
+        }
+        .report {
+            font-size: 18px;
+            font-weight: bold;
+            color: deepskyblue;
+            border-style: solid;
+            border-radius: 10px;
+            width: 500px;
+            background-color: #daf5ff;
+        }
+        @page {
+              size: Letter; /* Change from the default size of A4 */
+              margin: 1cm; /* Set margin on each page */
+            }
+    </style>
+</head>
+<body>
+    <p style="text-align: center;">
+        <span style="font-size: 36px; font-weight: bold; font-family: monospace">Minimal Kanban</span>
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: 24px; font-weight: bold; font-family: monospace;">Monthly Report</span>
+    </p>
+    <br>
+    <br>
+    <br>
+    <div class="main">
+        <p style="font-size: 18px"> Hi {{ data['username'] }}, </p>
+        <p style="font-size: 16px"> Here is your monthly report. </p>
+
+        <div class="report">
+          <p> <strong>&nbsp; Active Lists :</strong> </p>
+            <ul>
+                {% for list_name in data['list_names'] %}
+                    <li> {{ list_name }} </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <br>
+        <p style="font-size: 16px"> These are your cards that were marked completed and cards that went past deadline.</p>
+        <div class="heading-completed">
+        <p> <strong>&nbsp; Completed Tasks :</strong> </p>
+        <ul>
+            {% for task in data['completed'] %}
+                <li> {{ task }} </li>
+            {% endfor %}
+        </ul>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="heading-due">
+        <p> <strong>&nbsp; Overdue Tasks :</strong> </p>
+            <ul>
+                {% for task in data['overdue'] %}
+                    <li> {{ task }} </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <br>
+        <br>
+
+
+    <p style="font-size: 14px font-family: monospace;"> Thank you for using Minimal Kanban. </p>
+    <p style="font-size: 14px font-family: monospace;"> for any queries, please contact 21f3000611@student.onlinedegree.iitm.ac.in</p>
+    <br>
+    <p style="font-size: 14px; font-family: monospace;"> Regards, </p>
+    <p style="font-size: 14px font-family: monospace;"> Minimal Kanban Team </p>
+    </div>
+</body>
+</html>

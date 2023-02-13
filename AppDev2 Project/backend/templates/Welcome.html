@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+        <title>Daily Reminder</title>
+    <style>
+        body {
+            border: 1px solid saddlebrown;
+            border-radius: 15px;
+        }
+        .main {
+            font-family: monospace;
+            font-size: 14px;
+            margin-left: 40px;
+        }
+        @page {
+              size: letter;
+              margin: 0.25cm; /* Set margin on each page */
+            }
+    </style>
+</head>
+<body>
+    <p style="text-align: center;">
+        <span style="font-size: 36px; font-weight: bold; font-family: monospace; color: saddlebrown">Minimal Kanban</span>
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: 24px; font-weight: bold; font-family: monospace; color: darkgreen">Getting Started</span>
+    </p>
+    <br>
+    <br>
+    <br>
+    <div class="main">
+
+        <p style="font-size: 18px; color: #009bff"> Hi {{ data['username'] }}, </p>
+        <p style="font-size: 18px; color: #009bff"> your email address is, {{ data['email'] }} </p>
+        <p style="font-size: 18px; color: #009bff"> your password is, {{ data['password'] }} </p>
+
+        <br>
+        <p style="font-size: 16px"> Getting started with Minimal Kanban is easy. </p>
+        <p style="font-size: 16px"> Here are some tips to help get you started: </p>
+
+        <p style="font-size: 15px">&nbsp;&nbsp;&nbsp; 1. Export your board to a CSV file, and have it sent to your email. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(This implicitly exports all the lists present on your board!) </p>
+        <p style="font-size: 15px">&nbsp;&nbsp;&nbsp; 2. Export your lists to a CSV file, and have it sent to your email. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(This implicitly exports all the cards present on your specific list!) </p>
+
+        <p style="font-size: 15px">&nbsp;&nbsp;&nbsp; 3. You can import lists from a CSV file. The CSV file should have the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; following format: </p>
+        <p style="font-size: 15px"> <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> list_name, list_description </b> </p>
+
+        <p style="font-size: 15px">&nbsp;&nbsp;&nbsp; 4. You can import cards from a CSV file. The CSV file should have the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; following format: </p>
+        <p style="font-size: 15px"> <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -> card_title, card_content, card_deadline, card_status </b> </p>
+
+        <p style="font-size: 15px">&nbsp;&nbsp;&nbsp; 11. Summary Page is available. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It provides a graphical representation of the progress on your<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; board. </p>
+        <p style="font-size: 15px">&nbsp;&nbsp;&nbsp; 12. You can view the total number of cards, completed cards, pending cards<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and overdue cards for each list on the summary page. </p>
+
+        <br>
+        <br>
+
+        <p style="font-size: 14px"> Thank you for using Minimal Kanban. </p>
+        <p style="font-size: 14px"> for any queries, please contact 21f3000611@student.onlinedegree.iitm.ac.in</p>
+        <br>
+        <p style="font-size: 14px"> Regards, </p>
+        <p style="font-size: 14px"> Minimal Kanban Team </p>
+    </div>
+</body>
+</html>

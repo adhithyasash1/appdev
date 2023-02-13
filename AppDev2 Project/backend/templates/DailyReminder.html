@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Reminder</title>
+    <style>
+        body {
+            border: 1px solid saddlebrown;
+            border-radius: 15px;
+        }
+        .main {
+            font-family: monospace;
+            font-size: 14px;
+            margin-left: 40px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 5px;
+        }
+        th {
+            text-align: left;
+        }
+        .heading-pending {
+            font-size: 18px;
+            font-weight: bold;
+            color: #acac02;
+            border-style: solid;
+            border-radius: 25px;
+            width: 500px;
+            background-color: #fbfbd8;
+        }
+         .early {
+            font-size: 16px;
+            font-weight: bold;
+            color: dodgerblue;
+            border-style: solid;
+            border-radius: 25px;
+            width: 420px;
+            background-color: #b4deff;
+        }
+        @page {
+              size: letter;
+              margin: 0.25cm; /* Set margin on each page */
+            }
+    </style>
+</head>
+<body>
+
+    <p style="text-align: center;">
+        <span style="font-size: 36px; font-weight: bold; font-family: monospace">Minimal Kanban</span>
+    </p>
+    <p style="text-align: center;">
+        <span style="font-size: 24px; font-weight: bold; font-family: monospace;">Daily Reminder</span>
+    </p>
+    <br>
+    <br>
+    <br>
+    <div class="main">
+    <p style="font-size: 18px"> Hi {{ data['username'] }}, </p>
+    <p style="font-size: 16px"> You have {{ data['total'] }} cards in progress. </p>
+    <p style="font-size: 16px"> This is your reminder to change their status if you've completed any one of them today. </p>
+    <br>
+
+    <div class="heading-pending">
+        <p> <strong>&nbsp; Pending Tasks :</strong> </p>
+        <ul>
+            {% for task in data['pending'] %}
+                <li> {{ task }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="early">
+        <br>
+        <span> <strong>&nbsp; Nearest Card to Deadline : </strong> </span>
+        <p> &nbsp; Card Name : {{ data['earliest'] }} </p>
+        <p> &nbsp; Deadline : {{ data['earliest_value'] }} </p>
+    </div>
+
+    <br>
+    <br>
+
+    <p style="font-size: 14px"> Thank you for using Minimal Kanban. </p>
+    <p style="font-size: 14px"> for any queries, please contact 21f3000611@student.onlinedegree.iitm.ac.in</p>
+    <br>
+    <p style="font-size: 14px"> Regards, </p>
+    <p style="font-size: 14px"> Minimal Kanban Team </p>
+
+    </div>
+</body>
+</html>
