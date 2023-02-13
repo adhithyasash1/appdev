@@ -5,10 +5,10 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 
-SMTP_SERVER_HOST = 'smtp.gmail.com'
+SMTP_SERVER_HOST = 'smtp.something.com'
 SMTP_SERVER_PORT = 465
-SENDER_ADDRESS = 'sashiadithya@gmail.com'
-SENDER_PASSWORD = 'iyzbiqmkkotrmmii'
+SENDER_ADDRESS = 'your-smtp-address@something.com'
+SENDER_PASSWORD = 'your-smtp-provider-pass'
 
 
 def basic_email(to, subject, body, attachment_file=None):
