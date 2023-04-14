@@ -9,12 +9,10 @@ export default {
   name: 'App',
 
   router: router,
-
 }
 </script>
 
 <style>
-
 
 </style>
 
