@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <style>
+
+             .p2 {
+                    font-family: monospace;
+                    font-size: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    min-height: 10vh;
+                }   
+            .p3 {
+                  font-family: monospace;
+                  font-size: 43px;
+                  min-height: 10vh;
+                  color: saddlebrown;
+                  margin-top: 1px;
+                }
+
+            h1 {
+              color: red;
+              text-align: center;            }
+            
+            body {
+                  font-family: monospace;
+                  background-color: ghostwhite;
+                  text-align:center;
+                }
+
+            .main{
+                    position:relative;
+                    margin: 100px;
+                  }
+
+            textarea, input { 
+                              outline: none;
+                              border: 0;
+                              border-bottom: 2px solid green;
+                              height: 40px;
+                              width: 50%;
+                            }
+
+            input:focus{
+                        content
+                        }
+
+            .submit {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      align-items: center;
+                      text-align: center;
+                      min-height: 3vh;
+
+                    }
+
+                        /* Style buttons */
+            .btnlist {
+                      background-color: seagreen;
+                      border: none; /* Remove borders */
+                      color: white; /* White text */
+                      padding: 12px 16px; /* Some padding */
+                      font-size: 16px; /* Set a font size */
+                      cursor: pointer; /* Mouse pointer on hover */
+                      border-radius: 16px;
+                      font-family: monospace;
+                      margin: 10px;
+                      width: 250px;
+                    }
+
+            /* Darker background on mouse-over */
+            .btnlist:hover {
+                              background-color: green;
+                            }
+
+            .write {
+                       font-family: monospace;
+                       font-size: 22px; 
+                    }
+
+            ::placeholder { 
+                              color: saddlebrown;
+                              opacity: 1; 
+                            }
+
+      </style>
+  </head>
+  <body>
+    
+    <div class='header'>
+        <h1><p class="p1"> <img src="static/logo.png" width="400" height="198">  </p><br><p class='p3'> Minimal Kanban </p> </h1>
+    </div>
+    
+    <div class="main">
+      <form action="/" method="POST" id="loginForm">
+        
+        <div class="username" >
+          <input type="text" name="username" class="write" placeholder='Username' required></input>
+        </div>
+
+        <br>
+        <br> 
+
+        <div class="email" >
+          <input type="email" name="email" class="write" placeholder='Email 📧' required></input>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class='submit'>
+          <input type="submit" class="btnlist" name="submit"  value="Submit" style="color: ghostwhite;" alt="Submit";/>
+        </div>
+
+      </form>
+    </div>
+
+  </body>
+</html>

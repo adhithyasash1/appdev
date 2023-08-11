@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+    body {
+            font-family: monospace;
+            background-color: ghostwhite;
+            text-align: center;
+         }
+
+                .navbar {
+        overflow: hidden;
+        background-color: ghostwhite;
+      }
+
+      .navbar a {
+        float: left;
+        font-size: 25px;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+
+      }
+
+      .dropdown .dropbtn {
+        font-size: 25px;  
+        border: none;
+        outline: none;
+        color: black;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 15px;
+        margin-top: 11px;
+      }
+
+      .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: ghostwhite;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: ghostwhite;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: lightskyblue;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+
+
+      #box {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 650px;
+              height:400px;
+              color: black;
+              font-family: monospace;
+              font-size: 2.5rem;
+            }
+
+      .gradient-border {
+                          --borderWidth: 5px;
+                          background: ghostwhite;
+                          position: relative;
+                          border-radius: 7px;
+                        }
+
+      .gradient-border:after {
+                                content: '';
+                                position: absolute;
+                                top: calc(-1 * var(--borderWidth));
+                                left: calc(-1 * var(--borderWidth));
+                                height: calc(100% + var(--borderWidth) * 2);
+                                width: calc(100% + var(--borderWidth) * 2);
+                                background: linear-gradient(60deg, saddlebrown, seagreen, skyblue, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+                                border-radius: calc(2 * var(--borderWidth));
+                                z-index: -2;
+                                animation: animatedgradient 2.2s ease alternate infinite;
+                                background-size: 300% 300%;
+                              }
+
+
+      @keyframes animatedgradient {
+                                    0% {
+                                      background-position: 0% 50%;
+                                    }
+                                    50% {
+                                      background-position: 100% 50%;
+                                    }
+                                    100% {
+                                      background-position: 0% 50%;
+                                    }
+                                  }
+    
+      :root{
+              --primary-color: sienna;
+              --bg-color: #dfe6e9;
+              --text-color: white;
+            }
+
+      .container{
+                  display: flex;
+                  background: #ddb799;
+                  cursor: pointer;
+                  border-radius: 15px;
+                  position: relative;
+                  padding: 30px 40px;
+                  margin-left: 50px;
+                  margin-top: 20px;
+                  color: var(--primary-color);
+                  float: left;
+                }
+
+      .container::after{
+                          content: '';
+                          background: var(--primary-color);
+                          border-radius: 15px;
+                          height: 100%;
+                          width: 100%;
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          z-index: 0;
+                          clip-path: circle(5% at 0% 0%);           
+                          transition: all .3s ease-in;
+                        }
+
+      .content{
+                position: relative;
+                z-index: 1;
+                transition: all .3s ease-in;
+              }
+
+      .container:hover::after {
+                                clip-path: circle(100%);
+                              }
+
+      .container:hover .content {
+                                  color: var(--text-color);
+                                }
+
+
+      .main {
+                    display: inline-block;
+                    padding: 80px 100px;
+            }
+
+      .listt_title{
+                    text-align: center;
+                  }
+
+      .list_contentt{
+                      text-align: center;
+                      }
+
+      .comp {
+              font-size: 17px;
+              color: green;
+              text-align: left;
+            }
+
+      .inprog {
+                font-size: 17px;
+                color: darkgoldenrod;
+                text-align: left;              
+              }
+
+      .pastdead {
+              font-size: 17px;
+              color: red;
+              text-align: left;
+            }
+
+      .total {
+              font-size: 17px;
+              color: gray;
+              text-align: left;
+              }
+
+      .container:hover .comp{
+                              color: white;
+                            }
+
+      .container:hover .inprog{
+                                color: white;
+                              }
+
+      .container:hover .pastdead{
+                                  color: white;
+                                }
+
+      .container:hover .total{
+                                  color: white;
+                                }
+
+      .container:hover .listt_title{
+                                  color: #E3B81B;
+                                }
+
+      .container:hover .list_contentt{
+                                  color: #E3B81B;
+                                }
+
+    </style>
+  </head>
+    
+    <div class="navbar">
+      
+      <a href='#logo'><img src={{ url_for('static', filename='nav.png') }} width=100 height=50> </a>
+      
+      <div class="dropdown">
+        <button class="dropbtn">
+          Profile🔻
+          <i class="down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a> {{ user.username }} 👀</a>
+          <a href="/Home/user/{{ user.id }}"> Home 🛸 </a>
+          <a href="/"> Logout </a>
+        </div>
+      </div> 
+
+    </div>
+  
+  <body>
+
+    <div class='main'>
+      {% for list in lists %}
+      <div class="container">
+        <div class="content">
+          <h1 class='listt_title'> {{ list.list_name }} </h1>
+          <h3 class='list_contentt'> {{ list.list_description }} </h3>
+            {% if list.list_id in images %}
+              {% if images[list.list_id] %}
+                <div class="gradient-border" id="box">
+
+                  <img src={{ url_for('static', filename=images[list.list_id] ) }} width=650 height=400>
+
+                </div>
+              {% endif %}
+            {% endif %}
+            <br>
+            {% for key in value.keys() %}
+              {% if key == list.list_id %}
+              <p class='total'><strong> Total Cards : {{ value[key][0] }} </strong></p>
+              <p class='comp'><strong> Completed Cards : {{ value[key][1] }} </strong></p>
+              <p class='inprog'><strong> Cards in Progress : {{ value[key][2] }} </strong></p>
+              <p class='pastdead'><strong> Cards Past Deadline : {{ value[key][3] }} </strong></p>
+              {% endif %}
+            {% endfor %}
+        </div>
+      </div>
+      <br>
+      {% endfor %}
+    </div>
+
+  </body>
+</html>
